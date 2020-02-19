@@ -1,7 +1,7 @@
-export XQUAD=$1
+XQUAD=$1
 lang=$3
 
-python run_squad_github.py \
+python run_squad.py \
   --model_type bert \
   --do_eval \
   --model_name_or_path $2 \
@@ -11,7 +11,7 @@ python run_squad_github.py \
   --num_train_epochs 3.0 \
   --max_seq_length 320 \
   --doc_stride 128 \
-  --output_dir "test_"$lang \
+  --output_dir $2 \
   --per_gpu_eval_batch_size=5   \
   --per_gpu_train_batch_size=5  \
 
